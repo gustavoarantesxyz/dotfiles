@@ -5,7 +5,7 @@ These are the dotfiles of my configuration.
 
 This repository aims to keep my settings files and apps that I use and share them.
 
-My setup is focused on being simple and minimalist, it is completely keyboard-oriented (vim shortcuts) and based on the colorscheme  [Gruvbox Dark](https://github.com/morhetz/gruvbox)
+My setup is focused on being simple and minimalist, it is completely keyboard-oriented (vim shortcuts) and based on the colorscheme [Gruvbox Dark](https://github.com/morhetz/gruvbox)
 
 ## My machine
 ### ThinkPad X230 Modded
@@ -44,7 +44,7 @@ My setup is focused on being simple and minimalist, it is completely keyboard-or
 ![screenshotbtop](screenshots/btop.png)
 
 ## How-to
-To run, you need to have the same packages that I have installed, and you must place all the files from the .config folder in your .config folder and place the .zshenv file in the root of your user's home page.
+To run, you need to have the same packages that I have installed, and you must place all the files from the `.config` folder in your .config folder and place the `.zshenv` file in the root of your user's home page.
 
 This configuration is adapted for my use and will work in my environment, if you want to use it you must adapt some things, good luck.
 
