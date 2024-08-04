@@ -1,0 +1,31 @@
+#! /bin/sh
+
+# Autostart
+if [[ $(xrandr -q | grep 'HDMI1 connected') ]]; then
+	xrandr --output LVDS1 --primary --mode 1366x768 --rotate normal  --output HDMI1 --mode 2560x1080 --rotate normal --above LVDS1 
+    bspc monitor HDMI1 -f
+fi
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+${XDG_CONFIG_HOME}/polybar/launch.sh &
+
+# Config
+bspc monitor LVDS1 -d 1 2 3 4 5 6 7 8 9
+bspc monitor HDMI1 -d 1 2 3 4 5 6 7 8 9
+
+bspc config border_width 1
+bspc config window_gap   0
+bspc config normal_border_color  "#3c3836"
+bspc config focused_border_color "#d5c4a1"
+
+bspc config split_ratio        0.5
+bspc config borderless_monocle true
+bspc config gapless_monocle    true
+bspc config single_monocle 	   true
+
+bspc config focus_follows_pointer   true
+bspc config pointer_follows_monitor true
+bspc config pointer_follows_focus   true
+
+# Window rules 
+bspc rule -a Zathura state=tiled

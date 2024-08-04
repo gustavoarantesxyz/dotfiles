@@ -1,0 +1,82 @@
+configuration {
+	drun-display-format: "{name}";
+    font: "IBM Plex Mono 10";
+	modi: "drun";
+}
+
+* {
+    bg:     #282828;
+    bg-alt: #665c54;
+    fg:     #d5c4a1;
+    alert:  #fb4934;
+}
+
+entry {
+    placeholder: "";
+    cursor:      default;
+    text-color:  @fg;
+
+    margin:  0px;
+    padding: 1px 0px 0px 0px;
+    spacing: 0px;
+    border:  0px;
+}
+
+window {
+    location:         north;
+    width:            100%;
+    height:           20px;
+    background-color: @bg;
+    children:         [ mainbox, message ];
+
+    margin:  0px;
+    padding: 0px;
+    spacing: 0px;
+    border:  0px;
+}
+
+mainbox {
+    orientation: horizontal;
+    children:    [ inputbar,listview ];
+}
+
+inputbar {
+    hide-scrollbar: true;
+    width:          30%;
+    children:       [ entry ];
+
+    margin:  0px 7px;
+    padding: 0px;
+    spacing: 0px;
+    border:  0px;
+}
+
+listview {
+    border: 0px;
+    layout: horizontal;
+}
+
+element {
+    margin:  0px;
+    padding: 0px;
+    spacing: 0px;
+    border:  0px;
+}
+
+element-text {
+    padding:          0px 7px;
+    text-color:       @bg-alt;
+    background-color: @bg;
+    highlight:        None;
+}
+
+element-text selected {
+    text-color: @fg;
+}
+
+error-message {
+    padding:          1px 14px 0px 9px;
+    vertical-align:   0.5;
+    background-color: @alert;
+    text-color:       @alert;
+}

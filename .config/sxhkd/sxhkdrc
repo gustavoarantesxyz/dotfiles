@@ -1,0 +1,113 @@
+# wm independent hotkeys
+
+# Terminal
+mod1 + Return
+	$TERMINAL
+
+# Launcher
+mod1 + p
+	rofi -modi drun,run -show drun
+
+# Browser
+mod1 + w
+    $BROWSER 
+
+# VSCodium
+mod1 + v
+    $VISUAL 
+
+# Ranger
+mod1 + r
+    $TERMINAL -e ranger
+
+# Lockscreen
+mod1 + x
+    i3lock -u -c 282828 -e
+
+# Volume keys
+XF86AudioRaiseVolume
+    amixer set Master 5%+
+
+XF86AudioLowerVolume
+    amixer set Master 5%-
+
+XF86AudioMute
+    amixer set Master toggle
+
+# Printscreen
+Print
+    scrot '%Y-%m-%d_$wx$h.png' 
+
+# Printscreen selected
+mod1 + Print
+    scrot -s '%Y-%m-%d_$wx$h.png'
+
+# BSPWM hotkeys
+
+# quit/restart bspwm and restart sxhkd
+mod1 + shift + r
+    pkill -USR1 -x sxhkd && $HOME/.config/bspwm/bspwmrc
+
+# close and kill
+mod1 + BackSpace
+	bspc node -c
+
+# State / Flags
+
+mod1 + f
+	bspc node focused.tiled -t fullscreen
+
+mod1 + t
+	bspc node focused.fullscreen -t tiled
+
+mod1 + shift + f
+	bspc node focused.tiled -t floating
+
+mod1 + shift + t
+	bspc node focused.floating -t tiled
+
+# Focus / Swap
+
+# Focus the node in the given direction
+mod1 + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west.local,south.local,north.local,east.local}
+
+# Focus the next/previous workspaces in the current monitor
+mod1 + bracket{left,right}
+	bspc desktop -f {prev,next}.local
+
+# Swap the current node and the biggest local node
+mod1 + shift + Return
+	bspc node -s biggest.local
+
+# Focus next window
+mod1 + Tab
+	bspc node -f last
+
+# focus or send to the given desktop
+mod1 + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} focused:'^{1-9,10}' --follow
+
+# Focus prev/next monitor
+mod1 + {comma, period}
+    bspc monitor {prev,next} -f  
+
+# Send prev/next monitor
+mod1 + shift +  {comma, period}
+    bspc node -f {--to-monitor prev,--to-monitor next} -f --follow
+
+# Move / Resize
+
+# shrink/expand
+mod1 + ctrl + h
+	bspc node -z {left -20 0} || bspc node -z {right -20 0}
+mod1 + ctrl + j
+	bspc node -z {bottom 0 20} || bspc node -z {top 0 20}
+mod1 + ctrl + k
+	bspc node -z {bottom 0 -20} || bspc node -z {top 0 -20}
+mod1 + ctrl + l
+	bspc node -z {left 20 0} || bspc node -z {right 20 0}
+
+# move a floating window
+mod1 + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}

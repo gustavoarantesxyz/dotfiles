@@ -1,0 +1,53 @@
+#!/bin/sh
+
+# Settings for common commands
+alias cp="cp -r -iv"
+alias mv"mv -iv"
+alias rm="rm -r -vI"
+alias ls="ls -p --color=auto"
+alias lsa="ls -a -p --color=auto"
+alias ll="ls -l -p --color=auto"
+alias la="ls -lA -p --color=auto"
+alias ..="cd .."
+alias ...="cd ../../"
+alias grep="grep --color=auto"
+alias mkdir"mkdir -pv"
+alias fetch="clear && neofetch"
+
+# Application
+alias vi="$EDITOR"
+alias vs="$VISUAL"
+
+# System
+alias pu="sudo pacman -Syyu --noconfirm"
+alias pi="sudo pacman -S"
+alias pr="sudo pacman -R"
+alias ps="sudo pacman -Ss"
+alias psi="sudo pacman -Qs"
+alias pc="sudo pacman -Sc"
+alias pcc="sudo pacman -Scc"
+
+alias setup="sudo systemctl start httpd.service && sudo systemctl start mariadb.service && sudo systemctl start postgresql.service"
+
+# Git 
+alias g="git"
+alias gst="git status"
+alias gc="git commit"
+alias ga="git add"
+alias gpl="git pull"
+alias gpom="git pull origin master"
+alias gpu="git push"
+alias gpuom="git push origin master"
+alias gd="git diff"
+alias gch="git checkout"
+alias gnb="git checkout -b"
+alias gac="git add . && git commit"
+alias grs="git restore --staged ."
+alias gre="git restore"
+alias gr="git remote"
+alias gcl="git clone"
+alias glg="git log --graph --abbrev-commit --decorate --format=format:'%C(bold green)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold yellow)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
+alias gt="git ls-tree -r master --name-only"
+alias grm="git remote"
+alias gb="git branch"
+alias gf="git fetch"
