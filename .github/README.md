@@ -12,11 +12,13 @@ My setup is focused on being simple and minimalist, it is completely keyboard-or
  - BIOS: [1vyrain](https://1vyra.in/) 
  - Firmware: [EC Path](https://github.com/hamishcoleman/thinkpad-ec)
  - CPU: i5-3320M
- - Memory: 16Gb 1600mhz
- - Storage: SSD 256Gb
+ - Memory: 16Gb 1600MHz
+ - Storage: SSD 256GB
  - Battery: 8400 mAh
+ - WiFi Card: 6E AX210
  - Keyboard: Classic X220 Keyboard
  - Palmrest: X220
+ - External Antenna 6dBi
  - Black hinge
 
 ## Software I use
@@ -43,8 +45,8 @@ My setup is focused on being simple and minimalist, it is completely keyboard-or
 
 ![screenshotbtop](screenshots/btop.png)
 
-## How-to
-To run, you need to have the same packages that I have installed, and you must place all the files from the `.config` folder in your .config folder and place the `.zshenv` file in the root of your user's home page.
+## How to use
+To run, you need to have the same packages that I have installed, and you must place all the files from the `.config` folder in your `.config` folder and place the `.zshenv` file in the root of your user's home page.
 
 This configuration is adapted for my use and will work in my environment, if you want to use it you must adapt some things, good luck.
 
