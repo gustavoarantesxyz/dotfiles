@@ -38,6 +38,10 @@ XF86AudioMute
 Print
     scrot '%Y-%m-%d_$wx$h.png' 
 
+# Toggle Keyboard Layout
+mod1 + shift + t
+    setxkbmap -layout $(setxkbmap -query | grep layout | grep -q br && echo us || echo br)
+
 # Printscreen selected
 mod1 + Print
     scrot -s '%Y-%m-%d_$wx$h.png'
